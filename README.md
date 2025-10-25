@@ -1,5 +1,7 @@
 # Video Checker
 
+> **Note:** This project was abandoned in favor of a different idea for the hackathon. The repository contains only the Skip framework skeleton and planning documents (see TODO.md). Feel free to use this as a starting point if you want to implement the concept.
+
 ## Project Description
 Real-time "reality overlay" for any video. Select a video from your library, and the app auto-extracts narration, splits it into factual claims, and sync-scrolls them beside the video for live truth awareness.
 
