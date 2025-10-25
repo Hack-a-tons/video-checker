@@ -1,64 +1,37 @@
-# VideoChecker
+# Video Checker
 
-This is a free and open-source [Skip](https://skip.tools) dual-platform app project.
+## Project Description
+Real-time "reality overlay" for any video. Select a video from your library, and the app auto-extracts narration, splits it into factual claims, and sync-scrolls them beside the video for live truth awareness.
 
+## Hackathon Context
+This project has been built for the [**$5000 De-Vibed Hackathon**](https://luma.com/dj3k3tri) — hosted at AngelList Founders Cafe, San Francisco — taking place October 24–25, 2025. The event focuses on building real AI software without "AI slop", with surprise feature challenges revealed mid-way.
 
-<!-- TODO: add iOS screenshots to fastlane metadata
-## iPhone Screenshots
+## Vision
+Video-checker enhances how people consume viral video content by revealing the factual layer behind it in real time. Users can load any video directly from their phone's local library — it appears and plays in the video window. Meanwhile it is also uploaded to the server, processed, and processed text begins to appear in the text window with synchronized claim awareness.
 
-<img alt="iPhone Screenshot" src="Darwin/fastlane/screenshots/en-US/1_en-US.png" style="width: 18%" /> <img alt="iPhone Screenshot" src="Darwin/fastlane/screenshots/en-US/2_en-US.png" style="width: 18%" /> <img alt="iPhone Screenshot" src="Darwin/fastlane/screenshots/en-US/3_en-US.png" style="width: 18%" /> <img alt="iPhone Screenshot" src="Darwin/fastlane/screenshots/en-US/4_en-US.png" style="width: 18%" /> <img alt="iPhone Screenshot" src="Darwin/fastlane/screenshots/en-US/5_en-US.png" style="width: 18%" />
--->
+## Features
+- Real-time transcription placeholder
+- Two-pane UI: video + fact intelligence stream
+- Scroll-sync in both directions
+- Designed for Skip cross-platform (iOS + Android)
 
-<!-- TODO: add Android screenshots to fastlane metadata
-## Android Screenshots
+## Development / Running the App
+Xcode and Android Studio must be installed.
 
-<img alt="Android Screenshot" src="Android/fastlane/metadata/android/en-US/images/phoneScreenshots/1_en-US.png" style="width: 18%" /> <img alt="Android Screenshot" src="Android/fastlane/metadata/android/en-US/images/phoneScreenshots/2_en-US.png" style="width: 18%" /> <img alt="Android Screenshot" src="Android/fastlane/metadata/android/en-US/images/phoneScreenshots/3_en-US.png" style="width: 18%" /> <img alt="Android Screenshot" src="Android/fastlane/metadata/android/en-US/images/phoneScreenshots/4_en-US.png" style="width: 18%" /> <img alt="Android Screenshot" src="Android/fastlane/metadata/android/en-US/images/phoneScreenshots/5_en-US.png" style="width: 18%" />
--->
+An **Android emulator must already be running** (launch from Android Studio → Device Manager).
 
-## Building
+From the project root, run:
+```bash
+open Darwin/VideoChecker.xcodeproj
+```
+This opens Xcode.
 
-This project is both a stand-alone Swift Package Manager module,
-as well as an Xcode project that builds and translates the project
-into a Kotlin Gradle project for Android using the skipstone plugin.
+To run the app on both platforms simultaneously:
+- Select the **VideoChecker** target in Xcode
+- Press **Run** — this launches the iOS simulator
+- A build phase will automatically run the **“Launch Android APK”** script, deploying the transpiled Android app to the running Android emulator or connected device.
 
-Building the module requires that Skip be installed using
-[Homebrew](https://brew.sh) with `brew install skiptools/skip/skip`.
+**Logs**
+- iOS logs appear in **Xcode console**
+- Android logs appear in **Android Studio → Logcat tab**
 
-This will also install the necessary Skip prerequisites:
-Kotlin, Gradle, and the Android build tools.
-
-Installation prerequisites can be confirmed by running
-`skip checkup`. The project can be validated with `skip verify`.
-
-## Running
-
-Xcode and Android Studio must be downloaded and installed in order to
-run the app in the iOS simulator / Android emulator.
-An Android emulator must already be running, which can be launched from
-Android Studio's Device Manager.
-
-The project can be opened and run in Xcode from
-`Project.xcworkspace`, which also enabled parallel
-development of any Skip libary dependencies.
-
-To run both the Swift and Kotlin apps simultaneously,
-launch the "VideoChecker App" target from Xcode.
-A build phases runs the "Launch Android APK" script that
-will deploy the Skip app to a running Android emulator or connected device.
-Logging output for the iOS app can be viewed in the Xcode console, and in
-Android Studio's logcat tab for the transpiled Kotlin app, or
-using `adb logcat` from a terminal.
-
-## Testing
-
-The module can be tested using the standard `swift test` command
-or by running the test target for the macOS destination in Xcode,
-which will run the Swift tests as well as the transpiled
-Kotlin JUnit tests in the Robolectric Android simulation environment.
-
-Parity testing can be performed with `skip test`,
-which will output a table of the test results for both platforms.
-
-## License
-
-This software is licensed under the [GNU General Public License v2.0 or later](https://spdx.org/licenses/GPL-2.0-or-later.html).
